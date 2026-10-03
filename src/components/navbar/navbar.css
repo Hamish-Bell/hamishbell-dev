@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@property --c1 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #162331;
+}
+
+@property --c2 {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #293c51;
+}
+
+
+/* Main */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.navbar-container {
+    width: 20vw;
+    min-width: 400px;
+    max-width: 400px;
+    height: 95vh;
+    background-color: #131824;
+    margin: 10px;
+    border: 2px solid #243647;
+    border-radius: 14px;
+
+    overflow-y: auto;      /* scrolls vertically only when needed */
+    overflow-x: hidden;    /* stops a sideways scrollbar from the card shadows */
+    padding-bottom: 20px;  /* breathing room below the last card */
+    box-sizing: border-box;
+}
+
+/* Scrollable Nav */
+.navbar-container {
+    scrollbar-width: thin;                      /* Firefox */
+    scrollbar-color: #2a3a4f transparent;
+}
+
+.navbar-container::-webkit-scrollbar {          /* Chrome, Edge, Safari */
+    width: 8px;
+}
+
+.navbar-container::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 10px 0;                             /* keeps the track off the rounded corners */
+}
+
+.navbar-container::-webkit-scrollbar-thumb {
+    background: #2a3a4f;
+    border-radius: 8px;
+}
+
+.navbar-container::-webkit-scrollbar-thumb:hover {
+    background: #3b5270;
+}
+
+
+/* Library */
+.library .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    margin: 30px 15px;
+}
+
+.header .title {
+    color: var(--accent, #77daff);
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+/* Create Button */
+.header .create-button {
+    width: 90px;
+    height: 35px;
+    color: #f8fafc;
+    border: 2px solid #24273b;
+    border-radius: 32px;
+    --c1: #162331;
+    --c2: #293c51;
+    background: linear-gradient(to bottom right, var(--c1), var(--c2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    padding: 0px 8px 0px 8px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+
+    transition: --c1 0.5s ease, --c2 0.5s ease;
+}
+
+.header .create-button:hover {
+    cursor: pointer;
+    --c1: #263648;
+    --c2: #506781;
+}
+
+.create-button .button-text {
+    font-size: 17px;
+}
+
+.line {
+    border-bottom: 1px solid #243647;
+    width: 95%;
+    margin: -15px auto;
+}
+
+/* Library Items */
+.nav-items {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.Projects, .Awards, .My-Goals {
+    background: linear-gradient(to bottom right, var(--c1), var(--c2));
+    border: 2px solid #24273b;
+    border-radius: 8px;
+    height: 90px;
+    margin-bottom: 10px;
+    transition: --c1 0.5s ease, --c2 0.5s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.Projects:hover, .Awards:hover, .My-Goals:hover {
+    cursor: pointer;
+    --c1: #263648;
+    --c2: #506781;
+}
+
+.nav-items .text {
+    height: 60%;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 22px;
+}
+
+.nav-items .nav-card-title {
+    font-size: 18px;
+    color: var(--accent, #77daff);
+    transition: color 0.3s ease;
+}
+
+.nav-items .nav-card-info {
+    font-size: 15px;
+    color: #cdd8e3;
+}
+
+/* Nav-settings */
+.nav-settings {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.nav-settings .theme {
+    background: linear-gradient(to bottom right, var(--c1), var(--c2));
+    border: 2px solid #24273b;
+    border-radius: 8px;
+    min-height: 200px;
+    padding-bottom: 14px;
+    margin-bottom: 10px;
+    transition: --c1 0.5s ease, --c2 0.5s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.nav-settings .theme-title {
+    color: var(--accent, #77daff);
+    font-size: 18px;
+    margin: 7px 10px;
+    transition: color 0.3s ease;
+}
+
+/* Theme options bar */
+.options-bar-container {
+    width: 98%;
+    margin: 0 auto;
+    padding: 6px;
+    box-sizing: border-box;
+    border: 2px solid #243647;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    background: linear-gradient(to bottom right, #223242, #324357);
+}
+
+.options-bar-container .options-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;              /* wraps when the names don't fit on one row */
+    justify-content: center;      /* centers a lone item on the second row */
+    align-items: center;
+    gap: 6px 8px;
+
+    color: #f8fafc;
+    width: 100%;
+    list-style: none;
+}
+
+.options-items .item {
+    flex: 0 0 auto;               /* size to the text, don't shrink */
+    list-style: none;
+    font-size: 14px;
+    padding: 6px 10px;
+    text-align: center;
+    white-space: nowrap;          /* keeps each name on one line */
+    cursor: pointer;
+    border: 1px solid rgba(143, 211, 244, 0);   /* same colour, fully transparent */
+    border-radius: 6px;
+    color: #cdd8e3;
+
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.options-items .item:hover {
+    background-color: rgba(143, 211, 244, 0.08);
+}
+
+.options-items .item.active {
+    border-color: var(--accent, #8fd3f4);   /* outline follows the chosen colour */
+    color: #f8fafc;
+}
+
+/* Colour swatches */
+.swatches {
+    display: flex;
+    gap: 10px;
+    width: 98%;
+    margin: 14px auto 0;
+    padding: 0 6px;
+    box-sizing: border-box;
+}
+
+.swatch {
+    flex: 1;
+    height: 56px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: 2px solid transparent;
+    outline-offset: 3px;
+    transition: transform 0.2s ease, outline-color 0.3s ease;
+}
+
+.swatch:hover {
+    transform: translateY(-2px);
+}
+
+.swatch.active {
+    outline-color: var(--accent, #8fd3f4);   /* ring follows the chosen colour */
+}
+
+/* Bottom of Navbar: location + click cards */
+.info-row {
+    display: flex;
+    gap: 10px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 0;                 /* lets the cards shrink evenly instead of overflowing */
+    height: 190px;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom right, var(--c1), var(--c2));
+    border: 2px solid #24273b;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Location */
+.location-card {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px 10px;
+}
+
+.info-title {
+    color: var(--accent, #77daff);
+    font-size: 18px;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.map-box {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    isolation: isolate;        /* keeps Leaflet's layers from overlapping the rest of the navbar */
+    background: #131824;       /* shows while tiles load */
+}
+
+.location-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #cdd8e3;
+}
+
+.clock {
+    color: var(--accent, #77daff);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;   /* digits keep a fixed width, so the clock doesn't jiggle */
+    transition: color 0.3s ease;
+}
+
+/* Pulsing pin in the accent colour */
+.map-pin span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent, #77daff);
+    border: 2px solid #f8fafc;
+    box-sizing: border-box;
+    animation: pinPulse 2s ease-out infinite;
+}
+
+@keyframes pinPulse {
+    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent, #77daff) 70%, transparent); }
+    100% { box-shadow: 0 0 0 14px transparent; }
+}
+
+/* Make Leaflet's attribution small and unobtrusive */
+.leaflet-container {
+    font-family: "JetBrains Mono", monospace;
+}
+
+.leaflet-control-attribution {
+    font-size: 8px !important;
+    background: rgba(19, 24, 36, 0.7) !important;
+    color: #cdd8e3 !important;
+}
+
+/* Click counter */
+.click-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.click-number {
+    color: var(--accent, #77daff);
+    font-size: 30px;
+    font-weight: 700;
+    animation: pop 0.25s ease;    /* replays on each click because the span has key={count} */
+    transition: color 0.3s ease;
+}
+
+@keyframes pop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+.click-button {
+    padding: 9px 26px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent, #77daff);
+    color: #131824;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.2s ease, background-color 0.3s ease;
+}
+
+.click-button:hover {
+    filter: brightness(1.1);
+}
+
+.click-button:active {
+    transform: scale(0.95);
+}
+
+.click-text {
+    font-size: 11px;
+    color: #cdd8e3;
+}
