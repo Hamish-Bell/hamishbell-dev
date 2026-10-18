@@ -34,6 +34,7 @@ html, body, #root {
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 900px) {

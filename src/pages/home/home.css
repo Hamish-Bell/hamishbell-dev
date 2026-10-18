@@ -1,18 +1,25 @@
+
 .home-body {
     width: 85%;
-    height: 80%;
-    /* background-color: rgba(255, 0, 0, 0.142); */
-    margin: 0 auto;
-    vertical-align:middle;
+    min-height: 80%;
     max-width: 1500px;
     max-height: 800px;
-    margin-top: -100px;
+    margin: -100px auto 0;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.intro .title{
+.intro {
+    width: 100%;
+}
+
+.intro .title {
     color: white;
-    font-size: 45px;
+    font-size: clamp(28px, 4vw, 45px);
     margin-top: 5px;
+    font-family: "Jetbrains", monospace;
+    overflow-wrap: break-word;
 }
 
 .accent {
@@ -22,22 +29,59 @@
     cursor: pointer;
 }
 
-.accent:hover{
+.accent:hover {
     text-decoration: none;
     background-color: var(--accent);
     color: #131824;
-   
-}
-
-.intro .location, .intro .about {
-    color: #cdd8e3;
-    font-size: 25px;
 }
 
 .intro .about {
-    max-width: 900px;
+    color: #cdd8e3;
+    font-size: clamp(16px, 2vw, 25px);
+    line-height: 1.6;
+    max-width: 1000px;
     margin-top: 20px;
+    font-family: "Jetbrains", monospace;
+    overflow-wrap: break-word;
 }
 
+.intro .location {
+    font-size: clamp(14px, 1.5vw, 18px);
+    overflow-wrap: break-word;
+}
 
-/* Cards Section --> Shows featured projects / any other important information */
+/* Tablets */
+@media (max-width: 768px) {
+    .home-body {
+        width: 90%;
+        margin-top: -50px;
+    }
+
+    .intro .about {
+        max-width: 100%;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .home-body {
+        width: 92%;
+        margin-top: 0;
+        min-height: auto;
+        padding: 30px 0;
+    }
+
+    .intro .title {
+        font-size: clamp(25px, 7vw, 32px);
+    }
+
+    .intro .about {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-top: 14px;
+    }
+
+    .intro .location {
+        font-size: 14px;
+    }
+}
