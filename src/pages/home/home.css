@@ -41,7 +41,7 @@
     font-size: clamp(16px, 2vw, 25px);
     line-height: 1.6;
     max-width: 1000px;
-    margin-top: 20px;
+    margin-top: 10px;
     font-family: "Jetbrains", monospace;
     overflow-wrap: anywhere;
 }
