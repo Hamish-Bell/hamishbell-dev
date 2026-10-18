@@ -1,0 +1,43 @@
+html, body, #root {
+    height: 100%;
+}
+
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;              /* exactly one screen, so nothing gets pushed */
+}
+
+.app-body {
+    display: flex;
+    flex: 1;                    /* takes all the space above the footer */
+    min-height: 0;              /* lets the navbar scroll inside instead of growing the page */
+    /* background-color: red; */
+}
+
+.footer {
+    flex-shrink: 0;             /* footer keeps its height and sits at the bottom */
+}
+
+.screen-panel {
+    /* background-color: red; */
+    width: 100%;
+    background-color: #131824;
+    margin: 10px 5px;
+    margin-left: -2px;
+    margin-right: 10px;
+    border: 2px solid #243647;
+    border-radius: 14px;
+    overflow-y: auto;      /* scrolls vertically only when needed */
+    overflow-x: hidden;    /* stops a sideways scrollbar from the card shadows */
+    padding-bottom: 20px;  /* breathing room below the last card */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .screen-panel {
+        margin-left: 11px;
+    }
+}

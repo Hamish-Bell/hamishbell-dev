@@ -1,0 +1,43 @@
+.home-body {
+    width: 85%;
+    height: 80%;
+    /* background-color: rgba(255, 0, 0, 0.142); */
+    margin: 0 auto;
+    vertical-align:middle;
+    max-width: 1500px;
+    max-height: 800px;
+    margin-top: -100px;
+}
+
+.intro .title{
+    color: white;
+    font-size: 45px;
+    margin-top: 5px;
+}
+
+.accent {
+    color: var(--accent);
+    text-decoration: underline dotted 3.5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.accent:hover{
+    text-decoration: none;
+    background-color: var(--accent);
+    color: #131824;
+   
+}
+
+.intro .location, .intro .about {
+    color: #cdd8e3;
+    font-size: 25px;
+}
+
+.intro .about {
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+
+/* Cards Section --> Shows featured projects / any other important information */

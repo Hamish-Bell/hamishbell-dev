@@ -24,7 +24,6 @@
     width: 20vw;
     min-width: 400px;
     max-width: 400px;
-    height: 95vh;
     background-color: #131824;
     margin: 10px;
     border: 2px solid #243647;
@@ -67,7 +66,7 @@
     flex-direction: row;
     align-items: center;
     height: 50px;
-    margin: 30px 15px;
+    margin: 25px 15px;
 }
 
 .header .title {
@@ -110,7 +109,7 @@
 .line {
     border-bottom: 1px solid #243647;
     width: 95%;
-    margin: -15px auto;
+    margin: -18px auto;
 }
 
 /* Library Items */
@@ -392,4 +391,123 @@
 .click-text {
     font-size: 11px;
     color: #cdd8e3;
+}
+
+
+/* ============================================
+   Responsive: hamburger + slide-out drawer
+   ============================================ */
+
+/* Hamburger + backdrop are hidden on desktop */
+.hamburger,
+.backdrop {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    /* Hamburger button */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        position: fixed;
+        top: 14px;
+        left: 14px;
+        z-index: 1100;                 /* above the drawer so it can become the X */
+        width: 44px;
+        height: 44px;
+        padding: 0 11px;
+        box-sizing: border-box;
+        background: #131824;
+        border: 2px solid #243647;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: top 0.3s ease, left 0.3s ease;
+    }
+
+    /* When open, the X moves into the first header row, level with the title */
+    .hamburger.open {
+        top: 29px;
+        left: 27px;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: var(--accent, #77daff);
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.2s ease, background-color 0.3s ease;
+    }
+
+    /* Turns into an X when open */
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Dimmed backdrop */
+    .backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .backdrop.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Navbar becomes an off-canvas drawer */
+    .navbar-container {
+        position: fixed;
+        top: 10px;
+        bottom: 10px;
+        left: 10px;
+        margin: 0;
+        z-index: 1050;
+        width: 85vw;
+        min-width: 0;                  /* overrides the desktop 400px minimum */
+        max-width: 400px;
+        padding-top: 0;                /* no reserved gap, the X sits beside the title instead */
+
+        transform: translateX(calc(-100% - 20px));
+        visibility: hidden;            /* keeps closed links out of tab order */
+        transition: transform 0.3s ease, visibility 0s linear 0.3s;
+    }
+
+    .navbar-container.open {
+        transform: translateX(0);
+        visibility: visible;
+        transition: transform 0.3s ease, visibility 0s;
+    }
+
+    /* Fixed 300px text would overflow on narrow phones */
+    .nav-items .text {
+        width: 85%;
+    }
+
+    /* First header row: less top margin, title pushed right to clear the X */
+    .library > .header:first-child {
+        margin-top: 14px;
+    }
+
+    .library > .header:first-child .title {
+        margin-left: 56px;             /* 44px button + 12px gap */
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .library > .header:first-child .create-button {
+        width: 80px;
+    }
+
+    .library > .header:first-child .button-text {
+        font-size: 15px;
+    }
 }
