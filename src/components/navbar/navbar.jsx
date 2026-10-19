@@ -76,13 +76,13 @@ function Navbar() {
     ).addTo(map)
 
     // Custom marker, since Leaflet's default icon breaks under Vite
-    L.marker(ADELAIDE, {
-      icon: L.divIcon({
-        className: 'map-pin',
-        html: '<span></span>',
-        iconSize: [16, 16],
-      }),
-    }).addTo(map)
+    // L.marker(ADELAIDE, {
+    //   icon: L.divIcon({
+    //     className: 'map-pin',
+    //     html: '<span></span>',
+    //     iconSize: [16, 16],
+    //   }),
+    // }).addTo(map)
 
     return () => map.remove()   // cleans up on unmount and in StrictMode
   }, [])

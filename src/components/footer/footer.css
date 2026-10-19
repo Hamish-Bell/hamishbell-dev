@@ -39,13 +39,13 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #16a34a;
+    background: var(--accent);
     animation: statusPulse 2s ease-out infinite;
 }
 
 @keyframes statusPulse {
-    0%   { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.6); }
-    100% { box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); }
+    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent, #77daff) 70%, transparent); }
+    100% { box-shadow: 0 0 0 14px transparent; }
 }
 
 .footer-links a {
