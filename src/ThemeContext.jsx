@@ -5,7 +5,7 @@ export const palettes = {
   Blueberry: ['#a8c8ff', '#8fb4ff', '#7a9fff', '#6488ff', '#4d6fff'],
   Gooseberry: ['#c5f0a4', '#a8e57f', '#8bd65e', '#6cc24a', '#4fa83a'],
   Cranberry: ['#f4a6a6', '#ee7f7f', '#e25b5b', '#c93c3c', '#a82a2a'],
-  Blackberry: ['#e3b4ff', '#c77aff', '#aa3fff', '#8c0aff', '#5e008c']
+  Blackberry: ['#e3b4ff', '#c77aff', '#aa3fff', '#8c0aff', 'rgb(118, 0, 168)']
 }
 
 const STORAGE_KEY = 'navbar-theme'

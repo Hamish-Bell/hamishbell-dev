@@ -46,6 +46,7 @@
 @keyframes statusPulse {
     0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent, #77daff) 70%, transparent); }
     100% { box-shadow: 0 0 0 14px transparent; }
+    
 }
 
 .footer-links a {
