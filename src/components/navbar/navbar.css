@@ -468,11 +468,11 @@
         position: fixed;
         top: 10px;
         bottom: 10px;
-        left: 10px;
+        left: 5px;
         margin: 0;
         z-index: 1050;
         width: 85vw;
-        min-width: 0;                  /* overrides the desktop 400px minimum */
+        min-width: 97%;                  /* overrides the desktop 400px minimum */
         max-width: 400px;
         padding-top: 0;                /* no reserved gap, the X sits beside the title instead */
 
