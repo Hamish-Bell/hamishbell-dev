@@ -1,21 +1,25 @@
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <!-- Browser tab icon -->
+    <link rel="icon" type="image/png" href="/logo.png" />
 
     <title>Hamish Bell</title>
+
     <meta
       name="description"
       content="Hamish Bell, aspiring software engineer and web developer based in Adelaide, Australia."
     />
 
-    <!--  social sharing preview -->
+    <!-- Social sharing preview -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hamishbell-dev.vercel.app/" />
+    <meta
+      property="og:url"
+      content="https://hamishbell-dev.vercel.app/"
+    />
     <meta property="og:title" content="Hamish Bell" />
     <meta
       property="og:description"
@@ -23,9 +27,11 @@
     />
     <meta
       property="og:image"
-      content="https://hamishbell-dev.vercel.app/logo.svg"
+      content="https://hamishbell-dev.vercel.app/logo.png"
     />
+    <meta property="og:image:alt" content="Hamish Bell logo" />
 
+    <!-- Social preview fallback -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Hamish Bell" />
     <meta
@@ -34,9 +40,10 @@
     />
     <meta
       name="twitter:image"
-      content="https://hamishbell-dev.vercel.app/og-image.png"
+      content="https://hamishbell-dev.vercel.app/logo.png"
     />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
