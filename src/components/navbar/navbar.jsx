@@ -3,6 +3,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import './navbar.css'
 import { useTheme, palettes } from '../../ThemeContext.jsx'
+import { Link } from 'react-router-dom'
 
 const themes = Object.keys(palettes)
 
@@ -140,21 +141,23 @@ function Navbar() {
             <div className='Projects'>
               <div className='text'>
                 <h1 className='nav-card-title'>Projects</h1>
-                <p className='nav-card-info'>Playlist - Hamish’s World</p>
+                <p className='nav-card-info'>Playlist - Hamish’s Creations</p>
               </div>
             </div>
 
-            <div className='Awards'>
-              <div className='text'>
-                <h1 className='nav-card-title'>Awards</h1>
-                <p className='nav-card-info'>Playlist - Hamish’s Journey</p>
+            <Link to="/awards" className="Awards">
+              <div className="text">
+                <h1 className="nav-card-title">Awards</h1>
+                <p className="nav-card-info">
+                  Playlist - Hamish’s Achievements
+                </p>
               </div>
-            </div>
+            </Link>
 
-            <div className='My-Goals'>
+            <div className='About'>
               <div className='text'>
-                <h1 className='nav-card-title'>My Goals</h1>
-                <p className='nav-card-info'>Playlist - Hamish’s Future</p>
+                <h1 className='nav-card-title'>About</h1>
+                <p className='nav-card-info'>Playlist - Hamish’s Story</p>
               </div>
             </div>
           </div>

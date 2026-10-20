@@ -20,7 +20,6 @@ html, body, #root {
 }
 
 .screen-panel {
-    /* background-color: red; */
     width: 100%;
     background-color: #131824;
     margin: 10px 5px;
@@ -28,13 +27,19 @@ html, body, #root {
     margin-right: 10px;
     border: 2px solid #243647;
     border-radius: 14px;
-    overflow-y: auto;      /* scrolls vertically only when needed */
-    overflow-x: hidden;    /* stops a sideways scrollbar from the card shadows */
-    padding-bottom: 20px;  /* breathing room below the last card */
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+
     box-sizing: border-box;
+
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
 }
 
 @media (max-width: 900px) {
