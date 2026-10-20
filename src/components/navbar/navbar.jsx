@@ -151,7 +151,7 @@ function Navbar() {
               </div>
             </div>
 
-            <Link to='/awards' className='Awards'>
+            <Link to='/awards' className='Awards' onClick={() => setOpen(false)}>
               <div className='text'>
                 <h1 className='nav-card-title'>Awards</h1>
                 <p className='nav-card-info'>
