@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -29,6 +28,11 @@ function Navbar() {
   const [time, setTime] = useState(() => new Date())
   const [open, setOpen] = useState(false)
   const mapRef = useRef(null)
+
+  // Close navbar when the page changes
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
 
   // Save the click count
   useEffect(() => {
@@ -127,14 +131,15 @@ function Navbar() {
           <div className='header'>
             <h1 className='title'>Your Library</h1>
 
-            {/* Home button with icon */}
+            {/* Home button */}
             <Link
-              to="/"
+              to='/'
               className={`home-button ${isHome ? 'active' : ''}`}
-              aria-label="Home"
-              title="Home"
+              aria-label='Home'
+              title='Home'
+              onClick={() => setOpen(false)}
             >
-              <FaHome className="home-icon" />
+              <FaHome className='home-icon' />
             </Link>
           </div>
 
@@ -142,7 +147,10 @@ function Navbar() {
 
           {/* Main navigation items */}
           <div className='nav-items'>
-            <div className='Projects'>
+            <div
+              className='Projects'
+              onClick={() => setOpen(false)}
+            >
               <div className='text'>
                 <h1 className='nav-card-title'>Projects</h1>
                 <p className='nav-card-info'>
@@ -151,7 +159,11 @@ function Navbar() {
               </div>
             </div>
 
-            <Link to='/awards' className='Awards' onClick={() => setOpen(false)}>
+            <Link
+              to='/awards'
+              className='Awards'
+              onClick={() => setOpen(false)}
+            >
               <div className='text'>
                 <h1 className='nav-card-title'>Awards</h1>
                 <p className='nav-card-info'>
@@ -160,7 +172,10 @@ function Navbar() {
               </div>
             </Link>
 
-            <div className='About'>
+            <div
+              className='About'
+              onClick={() => setOpen(false)}
+            >
               <div className='text'>
                 <h1 className='nav-card-title'>About</h1>
                 <p className='nav-card-info'>
