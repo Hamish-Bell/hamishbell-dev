@@ -1,7 +1,7 @@
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-
-/* Awards Page */
+/* Award Colours */
 @property --c1 {
     syntax: "<color>";
     inherits: false;
@@ -14,31 +14,38 @@
     initial-value: #293c51;
 }
 
+/* Awards Page */
 .awards-bg {
     width: 100%;
+    max-width: 100%;
     min-width: 0;
     min-height: 95%;
-    padding: 20px 30px;
-    margin: 10px 5px;
+
+    padding: 100px 20px 200px;
+    margin: 10px 0;
     box-sizing: border-box;
 
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
     justify-content: center;
-    align-content: center;
-    align-items: center;
+    align-content: start;
+    align-items: stretch;
     gap: 20px;
 
+    overflow-x: hidden;
     background: transparent;
 }
 
+/* Awards Title */
 .awards-title {
+    grid-column: 1 / -1;
     width: 100%;
-    flex-basis: 100%;
+    min-width: 0;
     color: var(--accent, #77daff);
     font-size: 32px;
     margin: 0 0 5px;
     text-align: center;
+    overflow-wrap: anywhere;
 }
 
 /* Award Cards */
@@ -47,13 +54,13 @@
     --c2: #293c51;
 
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: 100%;
     min-width: 0;
-    flex-shrink: 0;
+    min-height: 220px;
+    height: auto;
     padding: 22px;
     box-sizing: border-box;
-    margin-bottom: 2px;
+    margin: 0;
 
     background: linear-gradient(
         to bottom right,
@@ -89,22 +96,15 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-.awards-bg::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 5px;
-}
-
 /* Award Titles */
 .awards-bg .card-title {
     font-family: "JetBrains Mono", monospace;
     font-size: 16px;
     line-height: 1.5;
     font-weight: 700;
-
     margin: 0 0 14px;
     color: var(--accent, #77daff);
+    overflow-wrap: anywhere;
 }
 
 /* Award Descriptions */
@@ -112,9 +112,9 @@
     font-family: "JetBrains Mono", monospace;
     font-size: 12px;
     line-height: 1.7;
-
     margin: 0;
     color: #cdd8e3;
+    overflow-wrap: anywhere;
 }
 
 /* Certification Buttons */
@@ -125,6 +125,8 @@
 
     margin-top: 14px;
     padding: 10px 14px;
+    max-width: 100%;
+    box-sizing: border-box;
     flex-shrink: 0;
 
     border: 1px solid #3b5270;
@@ -142,6 +144,7 @@
     font-weight: 600;
     text-align: center;
     text-decoration: none;
+    overflow-wrap: anywhere;
 
     transition:
         background 0.3s ease,
@@ -156,74 +159,33 @@
     color: #131824;
 }
 
-/* Scrollbar */
-.awards-bg::-webkit-scrollbar {
-    width: 8px;
-}
-
-.awards-bg::-webkit-scrollbar-track {
-    background: transparent;
-    margin: 10px 0;
-}
-
-.awards-bg::-webkit-scrollbar-thumb {
-    background: #2a3a4f;
-    border-radius: 8px;
-}
-
-.awards-bg::-webkit-scrollbar-thumb:hover {
-    background: #3b5270;
-}
-
-/* Page Scrollbar */
-html {
-    scrollbar-width: thin;
-    scrollbar-color: #2a3a4f transparent;
-}
-
-html::-webkit-scrollbar {
-    width: 8px;
-}
-
-html::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-html::-webkit-scrollbar-thumb {
-    background: #2a3a4f;
-    border-radius: 8px;
-}
-
-html::-webkit-scrollbar-thumb:hover {
-    background: #3b5270;
-}
-
 /* Responsive Layout */
 @media (max-width: 900px) {
     .awards-bg {
-        padding: 80px 20px 4cap;
+        padding: 100px 20px 200px;
         gap: 15px;
-        align-content: flex-start;
+        align-content: start;
     }
 
     .awards-bg .card {
-        width: calc(50% - 7.5px);
-        height: 260px;
-        flex-shrink: 1;
         padding: 16px;
     }
 }
 
-@media (max-width: 500px) {
+/* Mobile Layout */
+@media (max-width: 600px) {
     .awards-bg {
-        padding: 90px 10px 25px;
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 110px 12px 200px;
         gap: 15px;
+        align-content: start;
     }
 
     .awards-bg .card {
         width: 100%;
-        max-width: 320px;
-        height: 240px;
+        max-width: 100%;
+        min-height: 220px;
         padding: 20px;
     }
 

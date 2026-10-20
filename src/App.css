@@ -1,45 +1,71 @@
-html, body, #root {
+
+html,
+body,
+#root {
     height: 100%;
 }
 
 .app-layout {
     display: flex;
     flex-direction: column;
-    height: 100vh;              /* exactly one screen, so nothing gets pushed */
+    height: 100vh;
 }
 
 .app-body {
     display: flex;
-    flex: 1;                    /* takes all the space above the footer */
-    min-height: 0;              /* lets the navbar scroll inside instead of growing the page */
-    /* background-color: red; */
+    flex: 1;
+    min-height: 0;
 }
 
 .footer {
-    flex-shrink: 0;             /* footer keeps its height and sits at the bottom */
+    flex-shrink: 0;
 }
 
 .screen-panel {
     width: 100%;
+    min-width: 0;
+    min-height: 0;
+
     background-color: #131824;
     margin: 10px 5px;
     margin-left: -2px;
     margin-right: 10px;
+
     border: 2px solid #243647;
     border-radius: 14px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
 
     overflow-y: auto;
     overflow-x: hidden;
     padding-bottom: 20px;
 
-    box-sizing: border-box;
+    /* Thin scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #484c5d transparent;
+}
 
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 0;
+/* Chrome, Edge and Safari */
+.screen-panel::-webkit-scrollbar {
+    width: 2px;
+}
+
+.screen-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.screen-panel::-webkit-scrollbar-thumb {
+    background: #484c5d;
+    border-radius: 10px;
+}
+
+.screen-panel::-webkit-scrollbar-thumb:hover {
+    background: #35ffe7;
 }
 
 @media (max-width: 900px) {
