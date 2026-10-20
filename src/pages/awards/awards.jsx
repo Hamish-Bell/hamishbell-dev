@@ -4,6 +4,9 @@ function Awards() {
     return (
         <main className="awards-bg">
 
+            <h1 className="awards-title">Awards</h1>
+
+
             <div className='card'>
                 <h2 className='card-title'>Academic Endeavour (2022 - 2x)</h2>
                 <p className='card-text'>Recognised for consistent academic effort.</p>

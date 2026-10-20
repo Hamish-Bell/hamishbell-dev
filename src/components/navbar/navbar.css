@@ -75,35 +75,62 @@
     transition: color 0.3s ease;
 }
 
-/* Create Button */
-.header .create-button {
-    width: 90px;
-    height: 35px;
-    color: #f8fafc;
-    border: 2px solid #24273b;
-    border-radius: 32px;
-    --c1: #162331;
-    --c2: #293c51;
-    background: linear-gradient(to bottom right, var(--c1), var(--c2));
+/* Home Button */
+.header .home-button {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
-    padding: 0px 8px 0px 8px;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    margin-left: auto;
+    padding: 0;
+
+    color: #f8fafc;
+    font-size: 21px;
+    text-decoration: none;
+
+    background: linear-gradient(
+        to bottom right,
+        var(--c1),
+        var(--c2)
+    );
+
+    border: 2px solid #24273b;
+    border-radius: 50%;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 
     transition: --c1 0.5s ease, --c2 0.5s ease;
 }
 
-.header .create-button:hover {
+/* Home Icon */
+.home-icon {
+    font-size: 21px;
+}
+
+/* Hover: matches playlist cards */
+.header .home-button:hover {
     cursor: pointer;
     --c1: #263648;
     --c2: #506781;
 }
 
-.create-button .button-text {
-    font-size: 17px;
+/* Active Home Page */
+.header .home-button.active {
+    background: linear-gradient(
+        to bottom right,
+        var(--c1),
+        var(--c2)
+    );
+    border-color: #24273b;
+}
+
+/* Hide Home Text */
+.home-button .button-text {
+    display: none;
 }
 
 .line {
@@ -506,11 +533,15 @@
         white-space: nowrap;
     }
 
-    .library > .header:first-child .create-button {
-        width: 80px;
-    }
-
-    .library > .header:first-child .button-text {
-        font-size: 15px;
+    .library > .header:first-child .home-button {
+        width: 44px;
+        min-width: 44px;
+        max-width: 44px;
+        height: 44px;
+        min-height: 44px;
+        max-height: 44px;
+        flex: 0 0 44px;
+        box-sizing: border-box;
+        border-radius: 50%;
     }
 }

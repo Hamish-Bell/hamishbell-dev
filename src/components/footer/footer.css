@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+
 .footer {
     display: flex;
     align-items: center;
@@ -61,4 +64,19 @@
 
 @media (prefers-reduced-motion: reduce) {
     .status-dot { animation: none; }
+}
+
+@media (max-width: 700px) {
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-links {
+        justify-content: center;
+        text-align: center;
+    }
 }

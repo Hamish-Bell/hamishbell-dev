@@ -23,10 +23,10 @@ function App() {
           <Navbar />
 
           <div className='screen-panel'>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/awards' element={<Awards />} />
-            </Routes>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/awards' element={<Awards />} />
+              </Routes>
           </div>
         </div>
         <Footer />

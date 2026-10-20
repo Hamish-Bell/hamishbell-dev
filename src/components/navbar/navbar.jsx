@@ -1,15 +1,16 @@
+
 import { useState, useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import './navbar.css'
 import { useTheme, palettes } from '../../ThemeContext.jsx'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { FaHome } from 'react-icons/fa'
 
 const themes = Object.keys(palettes)
 
 const COUNT_KEY = 'navbar-click-count'
 const ADELAIDE = [-34.9285, 138.6007]
-
 
 function Navbar() {
   const { theme, setTheme, accent, setAccent } = useTheme()
@@ -22,8 +23,11 @@ function Navbar() {
     }
   })
 
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
   const [time, setTime] = useState(() => new Date())
-  const [open, setOpen] = useState(false)   // mobile drawer open/closed
+  const [open, setOpen] = useState(false)
   const mapRef = useRef(null)
 
   // Save the click count
@@ -44,6 +48,7 @@ function Navbar() {
     const onKey = (e) => {
       if (e.key === 'Escape') setOpen(false)
     }
+
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
@@ -51,6 +56,7 @@ function Navbar() {
   // Stop the page behind the drawer from scrolling while it's open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
+
     return () => {
       document.body.style.overflow = ''
     }
@@ -62,7 +68,7 @@ function Navbar() {
       center: ADELAIDE,
       zoom: 10,
       zoomControl: false,
-      scrollWheelZoom: false,   // so scrolling the navbar doesn't zoom the map
+      scrollWheelZoom: false,
     })
 
     map.attributionControl.setPrefix(false)
@@ -76,21 +82,12 @@ function Navbar() {
       }
     ).addTo(map)
 
-    // Custom marker, since Leaflet's default icon breaks under Vite
-    // L.marker(ADELAIDE, {
-    //   icon: L.divIcon({
-    //     className: 'map-pin',
-    //     html: '<span></span>',
-    //     iconSize: [16, 16],
-    //   }),
-    // }).addTo(map)
-
-    return () => map.remove()   // cleans up on unmount and in StrictMode
+    return () => map.remove()
   }, [])
 
   const pickTheme = (t) => {
     setTheme(t)
-    setAccent(palettes[t][2])   // default to the middle swatch
+    setAccent(palettes[t][2])
   }
 
   const adelaideTime = time.toLocaleTimeString('en-AU', {
@@ -103,7 +100,7 @@ function Navbar() {
 
   return (
     <>
-      {/* Hamburger button (only visible on small screens) */}
+      {/* Hamburger button */}
       <button
         className={`hamburger ${open ? 'open' : ''}`}
         onClick={() => setOpen(o => !o)}
@@ -116,7 +113,7 @@ function Navbar() {
         <span></span>
       </button>
 
-      {/* Dimmed backdrop, click to close */}
+      {/* Dimmed backdrop */}
       <div
         className={`backdrop ${open ? 'show' : ''}`}
         onClick={() => setOpen(false)}
@@ -129,26 +126,35 @@ function Navbar() {
         <div className='library'>
           <div className='header'>
             <h1 className='title'>Your Library</h1>
-            <div className='create-button'>
-              <h1 className='button-text'>+ Create</h1>
-            </div>
+
+            {/* Home button with icon */}
+            <Link
+              to="/"
+              className={`home-button ${isHome ? 'active' : ''}`}
+              aria-label="Home"
+              title="Home"
+            >
+              <FaHome className="home-icon" />
+            </Link>
           </div>
 
-          <div className="line"></div>
+          <div className='line'></div>
 
-          {/* Main Nav Item */}
+          {/* Main navigation items */}
           <div className='nav-items'>
             <div className='Projects'>
               <div className='text'>
                 <h1 className='nav-card-title'>Projects</h1>
-                <p className='nav-card-info'>Playlist - Hamish’s Creations</p>
+                <p className='nav-card-info'>
+                  Playlist - Hamish’s Creations
+                </p>
               </div>
             </div>
 
-            <Link to="/awards" className="Awards">
-              <div className="text">
-                <h1 className="nav-card-title">Awards</h1>
-                <p className="nav-card-info">
+            <Link to='/awards' className='Awards'>
+              <div className='text'>
+                <h1 className='nav-card-title'>Awards</h1>
+                <p className='nav-card-info'>
                   Playlist - Hamish’s Achievements
                 </p>
               </div>
@@ -157,17 +163,19 @@ function Navbar() {
             <div className='About'>
               <div className='text'>
                 <h1 className='nav-card-title'>About</h1>
-                <p className='nav-card-info'>Playlist - Hamish’s Story</p>
+                <p className='nav-card-info'>
+                  Playlist - Hamish’s Story
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Lets change things up */}
+          {/* Theme settings */}
           <div className='header'>
             <h1 className='title'>Lets change things up.</h1>
           </div>
 
-          <div className="line"></div>
+          <div className='line'></div>
 
           <div className='nav-settings'>
             <div className='theme'>
@@ -201,11 +209,13 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Location + click counter */}
+          {/* Location and click counter */}
           <div className='info-row'>
             <div className='info-card location-card'>
               <h2 className='info-title'>My Location</h2>
-              <div className='map-box' ref={mapRef} />
+
+              <div className='map-box' ref={mapRef}></div>
+
               <div className='location-footer'>
                 <span className='place'>Adelaide, AU</span>
                 <span className='clock'>{adelaideTime}</span>
@@ -213,10 +223,17 @@ function Navbar() {
             </div>
 
             <div className='info-card click-card'>
-              <span key={count} className='click-number'>{count}</span>
-              <button className='click-button' onClick={() => setCount(c => c + 1)}>
+              <span key={count} className='click-number'>
+                {count}
+              </span>
+
+              <button
+                className='click-button'
+                onClick={() => setCount(c => c + 1)}
+              >
                 CLICK ME
               </button>
+
               <p className='click-text'>
                 you’ve clicked {count} {count === 1 ? 'time' : 'times'}
               </p>
