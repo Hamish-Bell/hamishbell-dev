@@ -1,11 +1,15 @@
+
+/* HOME LAYOUT */
 .home-body {
     width: 85%;
     min-height: 80%;
     max-width: 1500px;
     max-height: 800px;
     margin: 0 auto;
+
     display: flex;
     align-items: center;
+
     box-sizing: border-box;
     padding: 30px 0;
 }
@@ -15,6 +19,7 @@
     min-width: 0;
 }
 
+/* TITLE */
 .intro .title {
     color: white;
     font-size: clamp(24px, 4vw, 45px);
@@ -23,6 +28,7 @@
     overflow-wrap: anywhere;
 }
 
+/* ACCENT TEXT */
 .accent {
     color: var(--accent);
     text-decoration: underline dotted 3.5px;
@@ -36,6 +42,7 @@
     color: #131824;
 }
 
+/* DESCRIPTION */
 .intro .about {
     color: #cdd8e3;
     font-size: clamp(16px, 2vw, 25px);
@@ -51,7 +58,54 @@
     overflow-wrap: anywhere;
 }
 
-/* Tablets */
+/* SOCIAL LINKS */
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #cdd8e3;
+    font-family: "Jetbrains", monospace;
+    font-size: 15px;
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.socials a svg {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+}
+
+.socials a:hover {
+    color: var(--accent);
+}
+
+/* SEPARATORS */
+.social-divider {
+    color: #697586;
+    font-size: 18px;
+    user-select: none;
+}
+
+/* KEYBOARD ACCESSIBILITY */
+.socials a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* TABLETS */
 @media (max-width: 768px) {
     .home-body {
         width: 90%;
@@ -64,7 +118,7 @@
     }
 }
 
-/* Mobile phones */
+/* MOBILE PHONES */
 @media (max-width: 480px) {
     .home-body {
         width: 92%;
@@ -84,5 +138,27 @@
 
     .intro .location {
         font-size: 14px;
+    }
+
+    .socials {
+        gap: 8px;
+        margin-top: 18px;
+    }
+
+    .socials a {
+        gap: 5px;
+        font-size: 13px;
+    }
+
+    .socials a svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    .socials a {
+        transition: none;
     }
 }
