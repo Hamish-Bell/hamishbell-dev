@@ -2,9 +2,9 @@
 /* HOME LAYOUT */
 .home-body {
     width: 85%;
-    min-height: 80%;
+    flex: 1;
+    min-height: 0;
     max-width: 1500px;
-    max-height: 800px;
     margin: 0 auto;
 
     display: flex;
@@ -31,7 +31,8 @@
 /* ACCENT TEXT */
 .accent {
     color: var(--accent);
-    text-decoration: underline dotted 3.5px;
+    text-decoration: underline dashed 2px;
+    text-underline-offset: 7px;
     transition: 0.2s ease;
     cursor: pointer;
 }
@@ -44,7 +45,7 @@
 
 /* DESCRIPTION */
 .intro .about {
-    color: #cdd8e3;
+    color: #c5c5c5;
     font-size: clamp(16px, 2vw, 25px);
     line-height: 1.6;
     max-width: 1000px;
@@ -73,9 +74,10 @@
     align-items: center;
     gap: 7px;
 
-    color: #cdd8e3;
+    color: #a8a7a7;
+
     font-family: "Jetbrains", monospace;
-    font-size: 15px;
+    font-size: 18px;
     text-decoration: none;
 
     transition: color 0.25s ease;

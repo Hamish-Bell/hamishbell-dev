@@ -172,7 +172,8 @@ function Navbar() {
               </div>
             </Link>
 
-            <div
+          <Link
+              to='/about'
               className='About'
               onClick={() => setOpen(false)}
             >
@@ -182,8 +183,9 @@ function Navbar() {
                   Playlist - Hamish’s Story
                 </p>
               </div>
-            </div>
-          </div>
+          </Link>
+        </div>
+
 
           {/* Theme settings */}
           <div className='header'>

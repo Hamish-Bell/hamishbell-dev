@@ -1,0 +1,177 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* ABOUT LAYOUT */
+.about-body {
+    width: 85%;
+    flex: 1;
+    min-height: 0;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 30px 0;
+}
+
+.about-intro {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    min-width: 0;
+}
+
+/* IMAGE SECTION */
+.about-side {
+    flex-shrink: 0;
+    margin-top: 10px;
+}
+
+.about-title {
+    color: var(--accent);
+    font-size: clamp(24px, 4vw, 45px);
+    margin-top: 5px;
+    font-family: "JetBrains Mono", monospace;
+    overflow-wrap: anywhere;
+}
+
+.about-side .image {
+    width: clamp(250px, 30vw, 420px);
+    height: clamp(350px, 42vw, 580px);
+    object-fit: cover;
+    border-radius: 9px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+
+}
+
+.about-side .image:hover {
+    transform: scale(1.02);
+}
+
+.image-caption {
+    color: #8b98a8;
+    font-size: 15px;
+    font-family: "JetBrains Mono", monospace;
+    text-align: center;
+    margin-top: 13px;
+    opacity: 0.8;
+}
+
+/* TEXT SECTION */
+.about-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-main .text {
+    color: #c5c5c5;
+    font-size: clamp(14px, 1.2vw, 20px);
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    overflow-wrap: anywhere;
+}
+
+.about-main .text + .text {
+    margin-top: 24px;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .about-body {
+        width: 90%;
+    }
+
+    .about-intro {
+        gap: 25px;
+    }
+
+    .about-side .image {
+        width: clamp(220px, 32vw, 300px);
+        height: clamp(300px, 42vw, 420px);
+    }
+
+    .about-main .text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* MOBILE PHONES */
+@media (max-width: 600px) {
+    .about-body {
+        width: 92%;
+        min-height: auto;
+        padding: 30px 0;
+    }
+
+    .about-intro {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .about-side {
+        width: 100%;
+    }
+
+    .about-title {
+        font-size: clamp(25px, 7vw, 32px);
+        margin-bottom: 15px;
+    }
+
+    .about-side .image {
+        width: 100%;
+        height: auto;
+        max-height: 450px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    .about-main {
+        width: 100%;
+    }
+
+    .about-main .text {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .about-main .text + .text {
+        margin-top: 20px;
+    }
+}
+
+/* SMALL MOBILE PHONES */
+@media (max-width: 390px) {
+    .about-body {
+        width: 94%;
+    }
+
+    .about-intro {
+        gap: 16px;
+    }
+
+    .about-title {
+        font-size: 25px;
+    }
+
+    .about-main .text {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    .about-side .image {
+        scroll-behavior: auto;
+    }
+}

@@ -10,6 +10,7 @@ import Footer from './components/footer/footer.jsx'
 // pages
 import Home from './pages/home/home.jsx'
 import Awards from './pages/awards/awards.jsx'
+import About from './pages/about/about.jsx'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -26,6 +27,7 @@ function App() {
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/awards' element={<Awards />} />
+                <Route path='/about' element={<About/>} />
               </Routes>
           </div>
         </div>
