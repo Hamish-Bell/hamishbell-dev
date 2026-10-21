@@ -6,6 +6,7 @@ import './App.css'
 import Loader from './components/loader/loader.jsx'
 import Navbar from './components/navbar/navbar.jsx'
 import Footer from './components/footer/footer.jsx'
+import Notfound from './components/notFound/notFound.jsx'
 
 // pages
 import Home from './pages/home/home.jsx'
@@ -28,6 +29,8 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/awards' element={<Awards />} />
                 <Route path='/about' element={<About/>} />
+
+                <Route path='*' element={<Notfound/>}/>
               </Routes>
           </div>
         </div>
