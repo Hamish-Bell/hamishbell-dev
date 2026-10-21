@@ -42,7 +42,7 @@
     width: 100%;
     min-width: 0;
     color: var(--accent, #77daff);
-    font-size: 32px;
+    font-size: clamp(24px, 4vw, 45px);   
     margin: 0 0 5px;
     text-align: center;
     overflow-wrap: anywhere;

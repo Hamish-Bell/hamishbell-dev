@@ -1,6 +1,7 @@
 
 import './about.css'
 import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 function About() {
     return (
@@ -14,7 +15,7 @@ function About() {
                 
                 <div className="about-main">
                     <p className="text">
-                        Hey! I'm Hamish Bell <span className="accent">(@Socials)</span>, an aspiring software engineer based in Adelaide, South Australia. I enjoy making new projects to cure my boredom.
+                        Hey! I'm Hamish Bell <Link to="/socials" className="accent">(@Socials)</Link>, an aspiring software engineer based in Adelaide, South Australia. I enjoy making new projects to cure my boredom.
                     </p>
 
                     <p className="text">

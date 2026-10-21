@@ -12,6 +12,7 @@ import Notfound from './components/notFound/notFound.jsx'
 import Home from './pages/home/home.jsx'
 import Awards from './pages/awards/awards.jsx'
 import About from './pages/about/about.jsx'
+import Socials from './pages/socials/socials.jsx'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -26,10 +27,16 @@ function App() {
 
           <div className='screen-panel'>
               <Routes>
+
+                {/* Main playlist links */}
                 <Route path='/' element={<Home />} />
                 <Route path='/awards' element={<Awards />} />
                 <Route path='/about' element={<About/>} />
 
+                {/* Extra Pages */}
+                <Route path = '/socials' element={<Socials/>}/>
+                
+                {/* 404 page */}
                 <Route path='*' element={<Notfound/>}/>
               </Routes>
           </div>

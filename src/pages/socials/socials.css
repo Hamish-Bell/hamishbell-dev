@@ -1,0 +1,179 @@
+.socials-body {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+.socials-text {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.socials-text .socials-title {
+    color: var(--accent);
+    text-align: center;
+    font-family: "JetBrains", monospace;
+    font-size: clamp(24px, 4vw, 45px);
+    margin-bottom: 12px;
+}
+
+.socials-text .socials-caption {
+    color: #c5c5c5;
+    text-align: center;
+    font-family: "JetBrains", monospace;
+    font-size: clamp(14px, 2vw, 19px);
+    line-height: 1.6;
+}
+
+.socials-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin: 0 auto 50px;
+}
+
+.socials-cards .socials-card {
+    --c1: #162331;
+    --c2: #293c51;
+
+    min-width: 0;
+    min-height: 250px;
+    padding: 28px 20px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        to bottom right,
+        var(--c1),
+        var(--c2)
+    );
+
+    border: 1px solid #343d50;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+
+    color: #f0f4f8;
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.socials-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+
+    font-size: 28px;
+    transition: 0.3s ease;
+}
+
+.socials-card h2 {
+    margin: 5px 0 0;
+    font-family: "JetBrains", monospace;
+    font-size: 21px;
+}
+
+.socials-card p {
+    margin: 0;
+    color: #b5bdca;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.socials-link {
+    margin-top: 8px;
+    color: var(--accent);
+    font-family: "JetBrains", monospace;
+    font-size: 13px;
+}
+
+/* Hover effect */
+.socials-cards .socials-card:hover {
+    --c1: #1c3042;
+    --c2: #354d67;
+
+    /* transform: translateY(-6px); */
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.socials-card:hover .socials-icon {
+    background: rgba(53, 255, 231, 0.1);
+    transform: scale(1.08);
+}
+
+/* Keyboard accessibility */
+.socials-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+    .socials-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+    .socials-body {
+        width: 92%;
+    }
+
+    .socials-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .socials-cards .socials-card {
+        min-height: 220px;
+    }
+
+    .socials-text {
+        margin-top: 35px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Bottom hover bar */
+.socials-cards .socials-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.socials-cards .socials-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+
+.socials-cards .socials-card:hover::after {
+    transform: scaleX(1);
+}

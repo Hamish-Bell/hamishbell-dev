@@ -33,7 +33,7 @@
 .about-title {
     color: var(--accent);
     font-size: clamp(24px, 4vw, 45px);
-    margin-top: 5px;
+    margin-top: 3px;
     font-family: "JetBrains Mono", monospace;
     overflow-wrap: anywhere;
 }
@@ -45,7 +45,7 @@
     border-radius: 9px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     display: block;
-    margin-top: 15px;
+    margin-top: 10px;
     transition: transform 0.3s ease;
 
 }
