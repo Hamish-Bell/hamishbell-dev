@@ -15,7 +15,7 @@ function About() {
                 
                 <div className="about-main">
                     <p className="text">
-                        Hey! I'm Hamish Bell <Link to="/socials" className="accent">(@Socials)</Link>, an aspiring software engineer based in Adelaide, South Australia. I enjoy making new projects to cure my boredom.
+                        <span className='bold'>Hey!</span> I'm Hamish Bell <Link to="/socials" className="accent">(@Socials)</Link>, an aspiring software engineer based in Adelaide, South Australia. I enjoy making new projects to cure my boredom.
                     </p>
 
                     <p className="text">

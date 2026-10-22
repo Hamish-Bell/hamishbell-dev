@@ -83,6 +83,10 @@
     margin-top: 24px;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 /* TABLETS */
 @media (max-width: 900px) {
     .about-body {
