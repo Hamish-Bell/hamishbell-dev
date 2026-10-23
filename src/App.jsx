@@ -13,6 +13,7 @@ import Home from './pages/home/home.jsx'
 import Awards from './pages/awards/awards.jsx'
 import About from './pages/about/about.jsx'
 import Socials from './pages/socials/socials.jsx'
+import Projects from './pages/projects/projects.jsx'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -32,6 +33,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/awards' element={<Awards />} />
                 <Route path='/about' element={<About/>} />
+                <Route path='/projects' element={<Projects/>} />
 
                 {/* Extra Pages */}
                 <Route path = '/socials' element={<Socials/>}/>

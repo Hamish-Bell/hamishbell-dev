@@ -147,7 +147,9 @@ function Navbar() {
 
           {/* Main navigation items */}
           <div className='nav-items'>
-            <div
+
+            <Link
+              to='/projects'
               className='Projects'
               onClick={() => setOpen(false)}
             >
@@ -157,7 +159,7 @@ function Navbar() {
                   Playlist - Hamish’s Creations
                 </p>
               </div>
-            </div>
+            </Link>
 
             <Link
               to='/awards'
