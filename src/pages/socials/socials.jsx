@@ -7,7 +7,7 @@ function Social() {
             name: 'GitHub',
             description: 'Check out my projects and code.',
             icon: <FaGithub />,
-            link: 'https://github.com/YOUR_USERNAME',
+            link: 'https://github.com/Hamish-Bell',
             label: 'View GitHub'
         },
         {
