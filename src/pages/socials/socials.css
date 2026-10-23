@@ -117,8 +117,7 @@
 }
 
 .socials-card:hover .socials-icon {
-    background: rgba(53, 255, 231, 0.1);
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 /* Keyboard accessibility */

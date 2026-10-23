@@ -19,7 +19,7 @@ function About() {
                     </p>
 
                     <p className="text">
-                        My favourite project so far is <span className="accent">PoopleUnlimited</span>, where I built my own modified version of the popular site, Poople.io. I also hold professional certifications from <span className="accent">HarvardX</span>, <span className="accent">IBM</span>, and <span className="accent">AlaskaX</span>. Through these courses, I enhanced my development and business skills.
+                        My favourite project so far is <Link to="/projects/poople" className="accent">Poople Unlimited</Link>, where I built my own modified version of the popular site, Poople.io. I also hold professional certifications from <Link to="/awards" className="accent">HarvardX</Link>, <Link to="/awards" className="accent">IBM</Link>, and <Link to="/awards" className="accent">AlaskaX</Link>. Through these courses, I enhanced my development and business skills.
                     </p>
 
                     <p className="text">

@@ -1,6 +1,8 @@
 
 import './home.css'
 import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+
 
 function Home() {
     return (
@@ -15,18 +17,19 @@ function Home() {
                     with an interest in software development. I've been learning
                     to code since I was 14, mainly using Python, LUAU, and Vite
                     React. I enjoy making websites, working on personal{' '}
-                    <span className="accent">projects</span>, and learning how
+                    <Link to="/projects" className="accent">projects</Link>, and learning how
                     things work behind the scenes. I've also completed
-                    certifications through <span className="accent">HarvardX</span>,{' '}
-                    <span className="accent">IBM</span>, and{' '}
-                    <span className="accent">AlaskaX</span>. I'm hoping to
+                    certifications through <Link to="/awards" className="accent">HarvardX</Link>,{' '}
+                    <Link to="/awards" className="accent">IBM</Link>, and{' '}
+                    <Link to="/awards" className="accent">AlaskaX</Link>. I'm hoping to
                     continue improving my skills and pursue a career in software
                     engineering.
+
                 </p>
 
                 <div className="socials">
                     <a
-                        href="https://github.com/YOUR_USERNAME"
+                        href="https://github.com/Hamish-Bell"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="GitHub"
