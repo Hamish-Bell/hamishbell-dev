@@ -14,6 +14,7 @@ import Awards from './pages/awards/awards.jsx'
 import About from './pages/about/about.jsx'
 import Socials from './pages/socials/socials.jsx'
 import Projects from './pages/projects/projects.jsx'
+import Poople from './pages/projects/poople/poople.jsx'
 
 function App() {
   const [loading, setLoading] = useState(true)

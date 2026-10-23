@@ -1,0 +1,615 @@
+
+/* Projects Page */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* Projects Background */
+
+.projects-body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: 1;
+    min-height: 0;
+
+    padding: 40px 20px;
+    margin: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+    background: transparent;
+}
+
+.projects-content {
+    width: 85%;
+    max-width: 1500px;
+    min-width: 0;
+    margin: 0 auto;
+
+    font-family: "JetBrains Mono", monospace;
+}
+
+/* Playlist Introduction */
+
+.projects-intro {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    min-width: 0;
+}
+
+.playlist-cover {
+    width: clamp(150px, 18vw, 220px);
+    height: clamp(150px, 18vw, 220px);
+    flex-shrink: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #24273b;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to bottom right,
+        #162331,
+        #293c51
+    );
+
+    color: var(--accent, #77daff);
+    font-size: clamp(45px, 5vw, 65px);
+}
+
+.playlist-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.projects-status {
+    display: block;
+    margin: 0 0 8px;
+
+    color: var(--accent, #77daff);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.playlist-info h1 {
+    margin: 0 0 12px;
+
+    color: var(--accent, #77daff);
+    font-size: clamp(24px, 4vw, 45px);
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: "JetBrains Mono", monospace;
+
+    overflow-wrap: anywhere;
+}
+
+.playlist-info > p {
+    max-width: 750px;
+    margin: 0 0 12px;
+
+    color: #c5c5c5;
+    font-size: clamp(14px, 1.2vw, 20px);
+    line-height: 1.6;
+    font-family: "JetBrains Mono", monospace;
+
+    overflow-wrap: anywhere;
+}
+
+.playlist-meta {
+    color: #a6b5c7;
+    font-size: 13px;
+    line-height: 1.7;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.playlist-meta span {
+    margin: 0 5px;
+    color: var(--accent, #77daff);
+}
+
+/* Playlist Toolbar */
+
+.projects-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 25px 0 20px;
+    min-width: 0;
+}
+
+.playlist-play {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--accent, #77daff);
+    border-radius: 50%;
+
+    background: linear-gradient(
+        to bottom right,
+        #223242,
+        #324357
+    );
+
+    color: var(--accent, #77daff);
+    font-size: 20px;
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.playlist-play:hover {
+    background: var(--accent, #77daff);
+    color: #131824;
+    transform: scale(1.05);
+}
+
+.playlist-icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    border: none;
+    background: transparent;
+
+    color: #a6b5c7;
+    font-size: 22px;
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.playlist-icon-button:hover {
+    color: var(--accent, #77daff);
+}
+
+.playlist-view-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+
+    color: #a6b5c7;
+    font-size: 13px;
+    font-family: "JetBrains Mono", monospace;
+}
+
+/* Project List */
+
+.project-list {
+    width: 100%;
+    min-width: 0;
+    margin-top: -28px;
+}
+
+.project-row {
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr) minmax(120px, 190px) 35px;
+    align-items: center;
+    gap: 15px;
+
+    min-height: 76px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.project-row:not(.project-header):hover {
+    background: linear-gradient(
+        to bottom right,
+        rgba(38, 54, 72, 0.75),
+        rgba(80, 103, 129, 0.18)
+    );
+
+    border-color: #3b5270;
+}
+
+.project-header {
+    min-height: 42px;
+    margin-bottom: 8px;
+
+    border: none;
+    border-bottom: 2px solid #24273b;
+    border-radius: 0;
+
+    color: #a6b5c7;
+    font-size: 13px;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.project-number {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #a6b5c7;
+    font-size: 14px;
+}
+
+.row-play {
+    display: none;
+    color: var(--accent, #77daff);
+    font-size: 16px;
+}
+
+.project-row:not(.project-header):hover .number-text {
+    display: none;
+}
+
+.project-row:not(.project-header):hover .row-play {
+    display: block;
+}
+
+/* Project Information */
+
+.project-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.project-thumbnail {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #3b5270;
+    border-radius: 7px;
+
+    background: linear-gradient(
+        to bottom right,
+        #162331,
+        #293c51
+    );
+
+    color: var(--accent, #77daff);
+    font-size: 20px;
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-row:hover .project-thumbnail {
+    border-color: var(--accent, #77daff);
+}
+
+.project-details {
+    min-width: 0;
+}
+
+.project-details h2 {
+    margin: 0 0 5px;
+
+    color: #f8fafc;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(14px, 1.2vw, 18px);
+    line-height: 1.5;
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease;
+}
+
+.project-row:hover .project-details h2 {
+    color: var(--accent, #77daff);
+}
+
+.project-details p {
+    margin: 0;
+
+    color: #a6b5c7;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+.project-technologies {
+    min-width: 0;
+
+    color: #a6b5c7;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+.project-link-heading,
+.project-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #a6b5c7;
+}
+
+.project-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    color: #a6b5c7;
+    font-size: 17px;
+    text-decoration: none;
+
+    opacity: 0;
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.project-row:hover .project-actions a,
+.project-actions a:focus-visible {
+    opacity: 1;
+}
+
+.project-actions a:hover {
+    color: var(--accent, #77daff);
+}
+
+/* Footer */
+
+.projects-footer {
+    margin-top: 25px;
+    padding: 18px 12px;
+
+    border-top: 2px solid #24273b;
+
+    color: #a6b5c7;
+    font-size: 13px;
+    line-height: 1.7;
+    font-family: "JetBrains Mono", monospace;
+    text-align: center;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+    .projects-body {
+        width: 100%;
+        padding: 30px 0;
+    }
+
+    .projects-content {
+        width: 90%;
+    }
+
+    .projects-intro {
+        gap: 25px;
+    }
+
+    .playlist-cover {
+        width: clamp(120px, 22vw, 180px);
+        height: clamp(120px, 22vw, 180px);
+        font-size: 48px;
+    }
+
+    .playlist-info > p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .project-row {
+        grid-template-columns: 30px minmax(0, 1fr) minmax(100px, 150px) 30px;
+        gap: 10px;
+        padding: 10px 8px;
+    }
+
+    .project-details h2 {
+        font-size: 14px;
+    }
+
+    .project-details p,
+    .project-technologies {
+        font-size: 12px;
+    }
+}
+
+/* Mobile Phones */
+
+@media (max-width: 600px) {
+    .projects-body {
+        width: 100%;
+        min-height: auto;
+        padding: 30px 0;
+        margin: 0;
+    }
+
+    .projects-content {
+        width: 92%;
+    }
+
+    .projects-intro {
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 25px;
+    }
+
+    .playlist-cover {
+        width: 100px;
+        height: 100px;
+        font-size: 35px;
+    }
+
+    .projects-status {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+    }
+
+    .playlist-info h1 {
+        font-size: clamp(25px, 7vw, 32px);
+        margin-bottom: 8px;
+    }
+
+    .playlist-info > p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .playlist-meta {
+        font-size: 11px;
+    }
+
+    .projects-toolbar {
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .playlist-play {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .playlist-icon-button {
+        font-size: 20px;
+    }
+
+    .playlist-view-label {
+        gap: 6px;
+        font-size: 10px;
+    }
+
+    .project-list {
+        margin-top: 0;
+    }
+
+    .project-row {
+        grid-template-columns: 22px minmax(0, 1fr) 28px;
+        gap: 8px;
+        padding: 10px 5px;
+    }
+
+    .project-header {
+        min-height: 38px;
+        font-size: 11px;
+    }
+
+    .project-technologies,
+    .project-header .project-technologies {
+        display: none;
+    }
+
+    .project-main {
+        gap: 10px;
+    }
+
+    .project-thumbnail {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .project-details h2 {
+        font-size: 12px;
+    }
+
+    .project-details p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .project-actions a {
+        opacity: 1;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .project-link-heading {
+        font-size: 12px;
+    }
+
+    .projects-footer {
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile Phones */
+
+@media (max-width: 390px) {
+    .projects-content {
+        width: 94%;
+    }
+
+    .projects-intro {
+        gap: 12px;
+    }
+
+    .playlist-cover {
+        width: 85px;
+        height: 85px;
+        font-size: 30px;
+    }
+
+    .playlist-info h1 {
+        font-size: 25px;
+    }
+
+    .playlist-info > p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .project-details h2 {
+        font-size: 11px;
+    }
+
+    .project-details p {
+        font-size: 10px;
+    }
+
+    .project-row {
+        gap: 5px;
+        padding: 10px 3px;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .project-row,
+    .playlist-play,
+    .playlist-icon-button,
+    .project-thumbnail,
+    .project-details h2,
+    .project-actions a {
+        transition: none;
+    }
+}
