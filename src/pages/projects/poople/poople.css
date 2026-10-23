@@ -97,6 +97,28 @@
     font-size: 1rem;
 }
 
+.poople-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.poople-github-button {
+    background: #f1f5f9;
+    color: #131824;
+    border-color: #f1f5f9;
+}
+
+.poople-github-button:hover {
+    background: #f1f5f9;
+    border-color: #dbe2ea;
+    color: #131824;
+}
+
+.poople-github-button svg {
+    font-size: 1rem;
+}
+
 @media (max-width: 768px) {
     .poople-body {
         width: 90%;
