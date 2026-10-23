@@ -20,6 +20,10 @@
     font-family: "JetBrains Mono", monospace;
 }
 
+.poople-body .accent {
+    text-underline-offset: 3px;
+}
+
 .poople-label {
     display: inline-block;
     margin-bottom: 18px;

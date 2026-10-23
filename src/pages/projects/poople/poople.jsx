@@ -19,7 +19,7 @@ function Poople() {
 
                 <p>
                     Poople Unlimited is my own modified version of the popular
-                    Wordle-like site <span className="highlight">poople.io</span>,
+                    Wordle-like site <span className="accent">poople.io</span>,
                     where I implemented my own features. I decided to create
                     this project because I enjoyed the original site, but
                     couldn't find an unlimited version I enjoyed. For example,
