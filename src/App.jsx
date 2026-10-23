@@ -38,6 +38,7 @@ function App() {
 
                 {/* Extra Pages */}
                 <Route path = '/socials' element={<Socials/>}/>
+                <Route path="/projects/poople" element={<Poople />} />
                 
                 {/* 404 page */}
                 <Route path='*' element={<Notfound/>}/>
