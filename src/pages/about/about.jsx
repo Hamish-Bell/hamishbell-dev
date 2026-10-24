@@ -9,7 +9,7 @@ function About() {
             <div className='about-intro'>
                 <div className='about-side'>
                     <h1 className='about-title'>About Me</h1>
-                    <img src="/dog.jpg" alt="about-image" className='image'/>
+                    <img src="/dog_blurred.png" alt="about-image" className='image'/>
                     <p className="image-caption">My dog, Schnitzell.</p>
                 </div>
                 
